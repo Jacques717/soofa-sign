@@ -14,15 +14,15 @@ export class LayerPanel extends Component {
     this.refs.toggle.addEventListener("click", () => this.toggleLayerPanel());
 
     // Add a toggle button for each layer
-    props.data.layerNames.forEach(name => this.addLayerButton(name));
+    props.data.layer.forEach(name => this.addLayerButton(name));
   }
 
   /** Create and append new layer button DIV */
-  addLayerButton(layerName) {
+  addLayerButton(layer) {
     let layerItem = document.createElement("div");
-    layerItem.textContent = `${layerName}s`;
-    layerItem.setAttribute("ref", `${layerName}-toggle`);
-    layerItem.addEventListener("click", e => this.toggleMapLayer(layerName));
+    layerItem.textContent = `${layer.name}`;
+    layerItem.setAttribute("ref", `${layer.id}-toggle`);
+    layerItem.addEventListener("click", e => this.toggleMapLayer(layer.id));
     this.refs.buttons.appendChild(layerItem);
   }
 
@@ -32,13 +32,20 @@ export class LayerPanel extends Component {
   }
 
   /** Toggle map layer visibility */
-  toggleMapLayer(layerName) {
+  toggleMapLayer(layerId) {
     // Toggle active UI status
     this.componentElem
-      .querySelector(`[ref=${layerName}-toggle]`)
+      .querySelector(`[ref=${layerId}-toggle]`)
       .classList.toggle("toggle-active");
 
     // Trigger layer toggle callback
-    this.triggerEvent("layerToggle", layerName);
+    this.triggerEvent("layerToggle", layerId);
+  }
+
+  resetLayerSelections() {
+    const layers = this.refs.buttons.children;
+    for (var i = 0; i < layers.length; i++) {
+      layers[i].classList.remove("toggle-active");
+    }
   }
 }

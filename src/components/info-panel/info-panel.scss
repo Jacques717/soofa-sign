@@ -23,10 +23,9 @@
 }
 
 .info-content {
-  padding: 0 8% 24px 8%;
+  padding: 10 8% 24px 8%;
   margin: 0 auto;
   background: $lightDark;
-  overflow-y: scroll;
   font-size: 1rem;
   line-height: 1.25em;
   font-weight: 300;
@@ -48,7 +47,6 @@
   z-index: 1000;
   background: $midDark;
   width: $leftPanelsWidth;
-  height: 60vh;
   color: $offWhite;
   transition: all 0.4s ease-in-out;
   transform: translateY(calc(100% - #{$footerHeight}));
@@ -62,8 +60,6 @@
 
 .info-body {
   margin-top: $footerHeight;
-  overflow-y: scroll;
-  overflow-x: hidden;
   position: relative;
   height: 80%;
 }

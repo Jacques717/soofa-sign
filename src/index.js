@@ -18,13 +18,20 @@ class ViewController {
     this.api = new ApiService("https://soofaiap.firebaseapp.com/DataFiles/");
 
     this.locationPointTypes = [
-      "googlefood",
-      "googlecommunity",
-      "googlebigshops"
+      { id: "googlefood", name: "Google food" },
+      { id: "googlecommunity", name: "Google community" },
+      { id: "googlebigshops", name: "Google big shops" },
+      { id: "googlesmallshops", name: "Google small shops" },
+      { id: "googletourist", name: "Google tourist" },
+      { id: "googletransit", name: "Google transit" },
+      { id: "yelpfood", name: "Yelp food" },
+      { id: "yelpshopping", name: "Yelp shopping" },
+      { id: "yelpcommunity", name: "Yelp community" },
+      { id: "walkscore", name: "Walk score" },
+      { id: "average", name: "Average" }
     ];
 
     this.initializeComponents();
-    this.loadMapData();
   }
 
   /** Initialize Components with data and event listeners */
@@ -37,10 +44,10 @@ class ViewController {
 
     //Initialize city dropdown
     this.dropdown = new DropDown("dropdown-panel-placeholder", {
-      //data: { searchService: this.searchService },
       data: { apiService: this.api },
       events: {
         resultSelected: event => {
+          this.layerPanel.resetLayerSelections();
           this.mapComponent.panToLocation();
         }
       }
@@ -48,7 +55,7 @@ class ViewController {
 
     // Initialize Layer Toggle Panel
     this.layerPanel = new LayerPanel("layer-panel-placeholder", {
-      data: { layerNames: ["site", ...this.locationPointTypes] },
+      data: { layer: [...this.locationPointTypes] },
       events: {
         layerToggle:
           // Toggle layer in map controller on "layerToggle" event
@@ -57,29 +64,6 @@ class ViewController {
           }
       }
     });
-  }
-
-  async loadMapData() {
-    // // Download kingdom boundaries
-    // const kingdomsGeojson = await this.api.getKingdoms()
-
-    // // Add data to map
-    // this.mapComponent.addKingdomGeojson(kingdomsGeojson)
-
-    // // Show kingdom boundaries
-    // this.layerPanel.toggleMapLayer('kingdom')
-
-    // Download location point geodata
-    for (let locationType of this.locationPointTypes) {
-      // // Download GeoJSON + metadata
-      //const geojson = await this.api.getLocations(locationType)
-      //Get Heatmap Data
-      //let newdata = AllScores[locationType];
-      // // Add data to map
-      //this.mapComponent.addLocationHeatmapData(locationType, newdata);
-      // Display location layer
-      //this.layerPanel.toggleMapLayer(locationType, newdata);
-    }
   }
 }
 
