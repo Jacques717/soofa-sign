@@ -17,6 +17,7 @@ Visit http://soofa.keepers.webfactional.com/ to explore the application.
 #### Setup
 
 To setup the project, simply download or clone the project to your local machine and type `npm install`.
+Run `npm run start:dev` to launch the application.
 
 #### What I did
 
