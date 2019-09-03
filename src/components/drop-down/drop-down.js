@@ -36,7 +36,7 @@ export class DropDown extends Component {
     this.triggerEvent("resultSelected");
 
     let cityDropdownList = this.refs.input;
-    for (var i = 0; i < cityDropdownList.options.length; i++) {
+    for (let i = 0; i < cityDropdownList.options.length; i++) {
       if (cityDropdownList.options[i].value == value) {
         cityDropdownList.options[i].selected = true;
         break;

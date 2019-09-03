@@ -7,8 +7,7 @@ module.exports = {
     rules: [
       {
         test: /\.js/,
-        exclude: /node_modules/,
-        include: [path.resolve(__dirname, "../app")],
+        exclude: /node_modules/,        
         use: {
           loader: "babel-loader"
         }

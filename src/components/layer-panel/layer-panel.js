@@ -44,7 +44,7 @@ export class LayerPanel extends Component {
 
   resetLayerSelections() {
     const layers = this.refs.buttons.children;
-    for (var i = 0; i < layers.length; i++) {
+    for (let i = 0; i < layers.length; i++) {
       layers[i].classList.remove("toggle-active");
     }
   }
