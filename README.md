@@ -2,7 +2,7 @@
 
 This mobile responsive app provides information to inform the best options for placing Soofa Signs
 
-Visit http://http://soofa.keepers.webfactional.com/ to explore the application.
+Visit http://soofa.keepers.webfactional.com/ to explore the application.
 
 #### Structure
 
@@ -39,4 +39,3 @@ To setup the project, simply download or clone the project to your local machine
 - Include Marker placements, city search, draggable heatmap areas and include calculated scoring data in 'More Info' component
 - Refactor the clone and heatmapping logic using ES6
 - Include Here Maps data-driven visualization of the density of foot traffic in buildings (i.e Malls) to find best spot to put a sign
-
