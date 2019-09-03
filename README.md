@@ -2,6 +2,8 @@
 
 This mobile responsive app provides information to inform the best options for placing Soofa Signs
 
+![GitHub repo size](https://img.shields.io/github/repo-size/jacques717/soofa-sign)
+
 Visit http://soofa.keepers.webfactional.com/ to explore the application.
 
 #### Structure
