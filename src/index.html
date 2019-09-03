@@ -1,10 +1,41 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Document</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no"
+    />
+    <title>Soofa Signs</title>
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="https://static1.squarespace.com/static/554f6a6ee4b0687034501a11/t/59d7cefdb7411c83d445a2c2/favicon.ico"
+    />
+
+    <style>
+      html {
+        background: #e11600;
+      }
+
+      #loading-container {
+        font-family: sans-serif;
+        position: absolute;
+        color: white;
+        letter-spacing: 0.8rem;
+        text-align: center;
+        top: 40%;
+        width: 100%;
+        text-transform: uppercase;
+      }
+    </style>
   </head>
-  <body></body>
+
+  <body>
+    <div id="loading-container">
+      <h1>Soofa Signs</h1>
+    </div>
+    <div id="app"></div>
+    <script src="https://soofaiap.firebaseapp.com/DataFiles/SoofaDataCambridge.js"></script>
+  </body>
 </html>
